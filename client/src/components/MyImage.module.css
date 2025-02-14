@@ -5,49 +5,46 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
-    padding: 2rem;
+    max-width: 600px;
+    /* Restrict max width to prevent excess space */
+    padding: 1.5rem;
     background: linear-gradient(135deg, #f7e8d3, #f2d7d9, #c9e4de);
     border-radius: 1rem;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
     transition: 0.3s;
-}
-
-.wrapper:hover {
-    transform: scale(1.02);
+    flex-direction: column;
+    /* Ensures a proper stacking layout */
 }
 
 .main-screen {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* Stack image and text properly */
     align-items: center;
-    width: 80%;
-    max-width: 500px;
-    height: auto;
-    padding: 1.5rem;
+    width: 100%;
+    max-width: 450px;
+    padding: 1rem;
     border-radius: 1rem;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
-    transition: all 0.3s ease-in-out;
 }
 
 .main-screen img {
     width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 350px;
+    /* Reduce height to remove excess space */
     border-radius: 1rem;
-    object-fit: cover;
+    object-fit: contain;
+    /* Ensure it adjusts properly */
     transition: 0.3s;
 }
 
-.main-screen img:hover {
-    transform: scale(1.05);
-}
-
 .image-text {
-    margin-top: 1rem;
-    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    /* Reduce space between image and text */
+    font-size: 1.1rem;
     font-family: "Chillax", sans-serif;
     font-weight: 600;
     color: #55423d;
@@ -58,15 +55,17 @@
 @media (max-width: 768px) {
     .wrapper {
         width: 100%;
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .main-screen {
-        width: 90%;
+        width: 95%;
+        padding: 0.8rem;
     }
 
     .main-screen img {
-        max-height: 300px;
+        max-height: 250px;
+        /* Further reduce image height for mobile */
     }
 
     .image-text {

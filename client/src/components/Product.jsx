@@ -4,9 +4,9 @@ const Product = ({ id, name, price, image }) => {
   return (
     <NavLink to={`/singleproduct/${id}`}>
       <div className="card">
-        <figure>
+       
           <img src={image} alt={name} />
-        </figure>
+        
         <div className="card-data">
           <h3>{name}</h3>
           <div className="card-data-flex">

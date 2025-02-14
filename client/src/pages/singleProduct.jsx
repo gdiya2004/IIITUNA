@@ -2,34 +2,41 @@ import { useEffect } from "react";
 import styles from "./singleProduct.module.css";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../../Contexts/ProductContext";
-// import AddToCart from "./components/AddToCart";
+// import AddToCart from "../components/AddToCart"
 import MyImage from "../components/MyImage";
 import FormatPrice from "../Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "../components/Star";
+import InquiryForm from "../components/InquiryForm";
+import { FaCartPlus } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { useCartContext } from "../../Contexts/cardcontext";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
 
   const { id } = useParams();
+  const {addToCart}=useCartContext()
 
   const {
     id: alias,
-    service,
     price,
+    service,
     description,
-    category,
-    stock,
     stars,
     reviews,
     image,
   } = singleProduct;
 
   useEffect(() => {
+    console.log("aaaaaa",id);
+    
     getSingleProduct(id);
-  }, [id]);
+  }, []);
+  
+  
 
   if (isSingleLoading) {
     return <div className="page_loading">Loading.....</div>;
@@ -82,20 +89,24 @@ const SingleProduct = () => {
           </div>
 
           <div className={styles.product_data_info}>
-            <p>
+            {/* <p>
               Available: <span>{stock > 0 ? "In Stock" : "Not Available"}</span>
-            </p>
+            </p> */}
             <p>
               ID: <span>{id}</span>
             </p>
             <p>
-              Brand: <span>{company}</span>
+              {/* Brand: <span>{company}</span> */}
             </p>
           </div>
-          {/* <hr />
-            {stock > 0 && <AddToCart product={singleProduct} />} */}
+{          console.log("price",price)}
+          <NavLink to="/cart" onClick={() => addToCart(id, service, price)}>
+  <FaCartPlus className={styles.warranty_icon} />
+  <span>Add to Cart</span>
+</NavLink>
         </div>
       </div>
+      <InquiryForm/>
     </div>
   );
 };

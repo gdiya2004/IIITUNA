@@ -33,7 +33,7 @@ const ProductContextProvider = ({ children }) => {
         const singleProduct = productsData.find(
             (product) => product.id === Number(id) // ✅ Ensure ID is correctly matched
         );
-        console.log("Product data",product);
+        console.log("Product data",singleProduct);
         
 
         if (singleProduct) {

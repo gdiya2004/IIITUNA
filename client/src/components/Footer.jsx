@@ -13,7 +13,7 @@ export const Footer = () => {
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Evervice</p>
-          <p>Made by YourName</p>
+          <p>Made by BDS</p>
         </div>
       </div>
     </footer>

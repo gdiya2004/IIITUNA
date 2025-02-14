@@ -31,19 +31,44 @@ const InquiryForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Name" required onChange={handleChange} value={formData.name} />
-            <input type="email" name="email" placeholder="Email" required onChange={handleChange} value={formData.email} />
-            <input type="text" name="phone" placeholder="Phone" required onChange={handleChange} value={formData.phone} />
-            <input type="text" name="eventType" placeholder="Event Type" required onChange={handleChange} value={formData.eventType} />
-            <input type="date" name="eventDate" required onChange={handleChange} value={formData.eventDate} />
-            <input type="text" name="venueLocation" placeholder="Venue Location" required onChange={handleChange} value={formData.venueLocation} />
-            <input type="number" name="estimatedHeadcount" placeholder="Estimated Headcount" required onChange={handleChange} value={formData.estimatedHeadcount} />
-            <input type="text" name="residence" placeholder="Where do you reside?" required onChange={handleChange} value={formData.residence} />
-            <input type="text" name="budget" placeholder="Have a budget in mind?" onChange={handleChange} value={formData.budget} />
-            <input type="text" name="howDidYouHear" placeholder="How did you hear about us?" onChange={handleChange} value={formData.howDidYouHear} />
-            <textarea name="additionalInfo" placeholder="Share any information or inspiration" onChange={handleChange} value={formData.additionalInfo}></textarea>
-            <button type="submit">Submit Inquiry</button>
-        </form>
+    <h2>For Inquiries</h2>
+
+    <label>Name *</label>
+    <input type="text" name="name" required onChange={handleChange} value={formData.name} />
+
+    <label>Email *</label>
+    <input type="email" name="email" required onChange={handleChange} value={formData.email} />
+
+    <label>Phone *</label>
+    <input type="text" name="phone" required onChange={handleChange} value={formData.phone} />
+
+    <label>Event Type *</label>
+    <input type="text" name="eventType" required onChange={handleChange} value={formData.eventType} />
+
+    <label>Event Date *</label>
+    <input type="date" name="eventDate" required onChange={handleChange} value={formData.eventDate} />
+
+    <label>Venue Location *</label>
+    <input type="text" name="venueLocation" required onChange={handleChange} value={formData.venueLocation} />
+
+    <label>Estimated Headcount *</label>
+    <input type="number" name="estimatedHeadcount" required onChange={handleChange} value={formData.estimatedHeadcount} />
+
+    <label>Where do you reside? *</label>
+    <input type="text" name="residence" required onChange={handleChange} value={formData.residence} />
+
+    <label>Have a budget in mind? *</label>
+    <input type="text" name="budget" onChange={handleChange} value={formData.budget} />
+
+    <label>How did you hear about us? *</label>
+    <input type="text" name="howDidYouHear" onChange={handleChange} value={formData.howDidYouHear} />
+
+    <label>Please share any information or inspiration you have for your dream event! *</label>
+    <textarea name="additionalInfo" onChange={handleChange} value={formData.additionalInfo}></textarea>
+
+    <button type="submit">Submit Inquiry</button>
+</form>
+
     );
 };
 

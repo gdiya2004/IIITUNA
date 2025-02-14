@@ -1,103 +1,66 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Arial", sans-serif;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f9f8f6;
-    padding: 20px;
-}
-
 form {
-    max-width: 900px;
-    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 30px 40px; /* Consistent spacing */
     background: white;
-    padding: 40px;
 }
 
-h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: #a08f75;
-    margin-bottom: 20px;
-}
-
-.input-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.input-group div {
-    flex: 1;
-    min-width: 250px;
-    margin: 10px;
-    position: relative;
-}
-
+/* Styling for Labels */
 label {
-    display: block;
-    font-size: 12px;
+    font-size: 14px;
+    color: #7a7a7a;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #444;
-    margin-bottom: 5px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
 }
 
+/* Styling for Input Fields */
 input, textarea {
     width: 100%;
-    border: none;
-    border-bottom: 1.5px solid black;
     padding: 8px 0;
-    font-size: 14px;
-    outline: none;
-    background: transparent;
-}
-
-input:focus, textarea:focus {
+    font-size: 16px;
+    border: none;
     border-bottom: 2px solid black;
+    background: transparent;
+    outline: none;
 }
 
+/* Ensure even alignment of input fields */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Full width for the text area */
 textarea {
+    grid-column: span 2; /* Makes it stretch across both columns */
     height: 100px;
     resize: none;
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    color: white;
-    background: black;
-    border: none;
-    cursor: pointer;
+/* Styling for Heading */
+h2 {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 20px;
     text-transform: uppercase;
-    margin-top: 20px;
-}
-
-button:hover {
-    background: #333;
+    color: #7a7a7a;
+    background: #c4ad92;
+    padding: 15px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .input-group {
-        flex-direction: column;
-        align-items: center;
+    form {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
     }
-
-    .input-group div {
-        width: 100%;
-        margin: 10px 0;
+    textarea {
+        grid-column: span 1;
     }
 }

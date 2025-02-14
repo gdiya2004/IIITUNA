@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useFilterContext } from "../../Contexts/filterContext";
-
+import "./FilterSection.css"
 const FilterSection = ({ onFilterChange }) => {
   // Local state for filter values
   const [location, setLocation] = useState("");

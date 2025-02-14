@@ -17,8 +17,7 @@ const SingleProduct = () => {
 
   const {
     id: alias,
-    name,
-    company,
+    service,
     price,
     description,
     category,

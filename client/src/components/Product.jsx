@@ -1,8 +1,7 @@
 import "../index.css";
 import { NavLink } from "react-router-dom";
 const Product = ({ id, name, price, image }) => {
-  console.log("productsss id",id);
-  
+  console.log("id in pro",id)
   return (
     <NavLink to={`/singleproduct/${id}`}>
       <div className="card">

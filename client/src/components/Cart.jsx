@@ -12,7 +12,11 @@ export const Cart = () => {
         <p>Your cart is empty.</p>
       ) : (
         <>
-          {cart.map((item) => (
+        {
+        console.log("cart valure",cart)}
+          {
+          
+          cart.map((item) => (
             <div key={item.id} style={styles.cartItem}>
               <p>
                 <strong>Service:</strong> {item.service}
@@ -26,11 +30,22 @@ export const Cart = () => {
               <button onClick={() => removeItem(item.id)} style={styles.removeButton}>
                 ❌ Remove
               </button>
-            </div>
-          ))}
+              {/* <p>Total: {total_amount}</p> */}
+              {/* <p>Total: ₹{Number.isFinite(total_amount) ? total_amount : 0}</p> */}
 
-          <h3>Total: ₹{total_amount}</h3>
+{console.log(total_amount)}
+
+              {/* <h3>Total: ₹{total_amount}</h3> */}
+            </div>
+          )
+          
+          )
+          
+          }
+          <h3>Total Amount: ₹{total_amount}</h3>
+
         </>
+        
       )}
     </div>
   );

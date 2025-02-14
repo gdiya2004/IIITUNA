@@ -18,6 +18,7 @@ const SingleProduct = () => {
     useProductContext();
 
   const { id } = useParams();
+  console.log("sing",id)
   const {addToCart}=useCartContext()
 
 

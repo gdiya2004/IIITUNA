@@ -6,16 +6,16 @@ const CartContext = createContext();
 const initialState = {
   cart: [],
   total_item: "",
-  total_amount: "",
+  total_amount: 0,
 };
 
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addToCart = (id, price, service) => {
+  const addToCart = (id,service, price) => {
     console.log("myyyyyyyy iadd",id);
-    
-    dispatch({ type: "ADD_TO_CART", payload: { id,price,service } });
+    dispatch({ type: "ADD_TO_CART", payload: { id,service,price } });
+    dispatch({type:"GET_TOTAL_AMOUNT"})
   };
 
   const removeItem = (id) => {

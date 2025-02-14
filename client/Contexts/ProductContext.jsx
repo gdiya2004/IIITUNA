@@ -28,25 +28,32 @@ const ProductContextProvider = ({ children }) => {
   const getSingleProduct = (id) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
     console.log("🔍 Fetching single product with ID:", id);
+    console.log("Products",productsData);
 
     try {
-        const singleProduct = productsData.find(
-            (product) => product.id === Number(id) // ✅ Ensure ID is correctly matched
-        );
-        console.log("Product data",product);
-        
-
-        if (singleProduct) {
-            console.log("✅ Product Found:", singleProduct);
-            dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
-        } else {
-            console.error("❌ Product not found for ID:", id);
-            dispatch({ type: "SET_SINGLE_ERROR" });
-        }
-    } catch (error) {
-        console.error("🚨 Error fetching product:", error);
+      console.log("Products",productsData);
+      if (!productsData || !Array.isArray(productsData)) {
+        console.error("🚨 productsData is not an array or is undefined inside try block");
         dispatch({ type: "SET_SINGLE_ERROR" });
+        return;
     }
+    const singleProduct = productsData.find(
+      (product) => product.id === Number(id)
+  );
+
+  console.log("Product data", singleProduct); // If this doesn’t log, .find() is failing
+
+  if (singleProduct) {
+      console.log("✅ Product Found:", singleProduct);
+      dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
+  } else {
+      console.error("❌ Product not found for ID:", id);
+      dispatch({ type: "SET_SINGLE_ERROR" });
+  }
+} catch (error) {
+  console.error("🚨 Error fetching product:", error);
+  dispatch({ type: "SET_SINGLE_ERROR" });
+}
 };
 
   // Fetch single product when ID changes

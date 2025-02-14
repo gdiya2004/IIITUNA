@@ -1,6 +1,6 @@
 export const productsData = [
   {
-    "id":"1",
+    "id":1,
     "service": "Event Planning & Management",
     "description": "Comprehensive event planning services for corporate and personal occasions.",
     "price": "$2,500 - $15,000",

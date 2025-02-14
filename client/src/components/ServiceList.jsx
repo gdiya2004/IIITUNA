@@ -8,7 +8,7 @@ const ServiceList = () => {
   const navigate = useNavigate(); 
 
   const handleServiceClick = (product) => {
-      navigate(`/singleProduct/:${product.id}`)
+      navigate(`/singleProduct/${product.id}`)
   };
 
   return (

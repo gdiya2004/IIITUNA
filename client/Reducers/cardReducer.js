@@ -2,7 +2,7 @@ const cartReducer = (state, action) => {
 
     if (action.type === "ADD_TO_CART") {
         const { id, price, service } = action.payload;
-        console.log("ddeeeeeeeeee iddddd",id);
+        console.log("ddeeeeeeeeee iddddd",price);
         
         let existingItem = state.cart.find((item) => item.id === id);
             console.log("Existing item ",existingItem);
@@ -18,7 +18,6 @@ const cartReducer = (state, action) => {
 
         let total_amount = updatedCart.reduce(
             (acc, item) => acc + item.price * item.quantity,
-            0
         );
 
         return {

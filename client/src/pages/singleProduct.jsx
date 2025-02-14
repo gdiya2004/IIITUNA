@@ -94,7 +94,7 @@ const SingleProduct = () => {
               Available: <span>{stock > 0 ? "In Stock" : "Not Available"}</span>
             </p> */}
             <p>
-              ID: <span>{id}</span>
+              {/* ID: <span>{id}</span> */}
             </p>
             <p>
               {/* Brand: <span>{company}</span> */}
@@ -103,7 +103,7 @@ const SingleProduct = () => {
 {          console.log("price",price)}
           <NavLink to="/cart" onClick={() => addToCart(id, service, price)}>
   <FaCartPlus className={styles.warranty_icon} />
-  <span>Add to Cart</span>
+  <span></span>
 </NavLink>
         </div>
       </div>

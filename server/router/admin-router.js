@@ -1,6 +1,6 @@
 import express from  "express"
 import {getAllUsers} from "../controllers/admin-controller.js"
-import {getAllContacts,deleteUserById,getUserById,updateUserById} from "../controllers/admin-controller.js"
+import {getAllContacts,deleteUserById,getUserById} from "../controllers/admin-controller.js"
 import {authMiddleware} from "../middlewares/auth-middleware.js"
 import { adminMiddleware } from "../middlewares/admin-middleware.js"
 import {deleteUserByContact} from "../controllers/admin-controller.js"

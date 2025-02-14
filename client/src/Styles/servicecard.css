@@ -6,7 +6,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.drop{
+  width:auto;
+}
 /* Container */
 .service-container {
   display: flex;
@@ -21,30 +23,30 @@ body {
 /* Left Sidebar (Filters) */
 .filter-sidebar {
   width: 25%;
-  background: #ffffff;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  /* background: #ffffff; */
+  /* box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
 }
 
-.filter-sidebar h2 {
+/* .filter-sidebar h2 {
   font-size: 22px;
   font-weight: bold;
   color: #444;
   margin-bottom: 15px;
-}
+} */
 
-.filter-sidebar .filters {
+/* .filter-sidebar .filters {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
+} */
 
 /* Right Main Content */
 .service-main {
   flex: 1;
-  background: #ffffff;
+  /* background: #ffffff; */
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 20px;
@@ -63,10 +65,19 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+.filter-search{
+  width:auto;
+}
+.search-type{
+  width:auto;
+}
 
+.heelo{
+  width:auto;
+}
 /* Service Card */
 .service-card {
-  background: #ffffff;
+  /* background: #ffffff; */
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -113,11 +124,6 @@ body {
     margin: 0 20px;
   }
 
-  .filter-sidebar {
-    width: 100%;
-    order: -1; /* Moves filter section above main content */
-    padding: 15px;
-  }
 
   .service-main {
     order: 2;

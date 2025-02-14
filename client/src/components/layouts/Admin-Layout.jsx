@@ -1,6 +1,6 @@
 import { Navigate, NavLink, Outlet } from "react-router-dom"
 import {useAuth} from "../../store/auth.jsx"
-
+import "./Admin-Layout.css"
 export const AdminLayout=()=>{
     const {user,isLoading}=useAuth();
     console.log("admin lay",user);
@@ -14,14 +14,12 @@ export const AdminLayout=()=>{
         <>
         <header>
             <div className="container">
-                <nav>
+               
                     <ul>
-                        <li><NavLink to="/admin/users">users</NavLink></li>
-                        <li><NavLink to="/admin/contacts">contacts</NavLink></li>
-                        <li></li>
-                        <li></li>
+                        <li><NavLink to="/admin/users" className="link">users</NavLink></li>
+                        <li><NavLink to="/admin/contact" className="link">contacts</NavLink></li>
                     </ul>
-                </nav>
+                
             </div>
         </header>
         <Outlet/>

@@ -12,7 +12,7 @@ const FeatureProduct = () => {
   return (
     <section className="feature-section">
       <div className="container">
-        <div className="intro-data">Check Now!</div>
+        <div className="intro-data"></div>
         <h2 className="common-heading">Our Feature Services</h2>
         <div className="grid grid-three-column">
           {featureProducts.map((curElem) => (

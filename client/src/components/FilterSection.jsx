@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useFilterContext } from "../../Contexts/filterContext";
-
+import "../Styles/servicecard.css"
 const FilterSection = ({ onFilterChange }) => {
   // Local state for filter values
   const [location, setLocation] = useState("");
@@ -12,13 +12,15 @@ const FilterSection = ({ onFilterChange }) => {
     onFilterChange({ location, budget, category });
   };
   const{updateFilterValue,filters:{text,service},all_data,filter_data,sorting}=useFilterContext()
-
+  
   return (
-    <div className="p-4 bg-gray-800 rounded-lg">
-      <div className="sort-selection">
+   <>
+    <div className="filter-sidebar">
+      <div >
         <form action="#">
-          <label htmlFor="sort"></label>
+          <label htmlFor="sort"><h3>Budget:</h3></label>
           <select
+          className="drop"
             name="sort"
             id="sort"
             onChange={sorting}>
@@ -32,42 +34,17 @@ const FilterSection = ({ onFilterChange }) => {
           </select>
         </form>
       </div>
-      <h2 className="text-2xl font-bold text-white mb-6">Filters</h2>
+      {/* <h2 className="text-2xl font-bold text-white mb-6">Filters</h2> */}
 
-      <div className="space-y-4">
-      <div className="filter-search">
-            <form onSubmit={(e)=>e.preventDefault()}>
-                <input placeholder="search " type="text" name="text" value={text} onChange={updateFilterValue}/>
-            </form>
-            </div>
-        Location Filter
+      
         
-
-        {/* Budget Filter */}
-        {/* <div className="flex flex-col">
-          <label htmlFor="budget" className="text-white text-sm font-medium mb-2">
-            Budget
-          </label>
-          <select
-            id="budget"
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-            className="p-2 rounded-lg text-black"
-            onBlur={handleFilterChange} // Trigger on change
-          >
-            <option value="">Select Budget</option>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </div> */}
-
-        {/* Category Filter */}
-        <div className="filter-category">
-                  <h3>Service</h3>
+        <div className="filter-category" style={{"width":"25vw"}}>
+                 
                   <form action='#'>
+                    <h3>Service</h3>
                       <select 
                       value={service}
+                      className="heelo"
                       name="service"
                       id="company"
                       onChange={updateFilterValue}
@@ -83,7 +60,7 @@ const FilterSection = ({ onFilterChange }) => {
                   </form>
                 </div>
       </div>
-    </div>
+    </>
   );
 };
 

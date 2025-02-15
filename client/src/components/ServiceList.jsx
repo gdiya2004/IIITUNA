@@ -1,10 +1,15 @@
-import "../Styles/servicecard.css"
-
+import "../Styles/servicecard.css";
 import React from "react";
 import { useFilterContext } from "../../Contexts/filterContext";
+import { useNavigate } from "react-router-dom"; 
 
 const ServiceList = () => {
-  const { filter_data } = useFilterContext(); // Get the filtered data from the context
+  const { filter_data } = useFilterContext(); 
+  const navigate = useNavigate(); 
+
+  const handleServiceClick = (product) => {
+      navigate(`/singleProduct/${product.id}`)
+  };
 
   return (
     <div className="service-main">
@@ -14,8 +19,8 @@ const ServiceList = () => {
       <div className="service-grid">
         {filter_data.length > 0 ? (
           filter_data.map((product, index) => (
-            <div key={index} className="service-card">
-              <img src={product.image} alt={product.name} />
+            <div key={index} className="service-card" onClick={() => handleServiceClick(product)}>
+              <img src={product.image} alt={product.service} />
               <h3>{product.service}</h3>
               <p>{product.description}</p>
               <p className="price">${product.price}</p>
@@ -26,7 +31,7 @@ const ServiceList = () => {
         )}
       </div>
     </div>
-  );;
+  );
 };
 
 export default ServiceList;

@@ -1,0 +1,34 @@
+/* Ensure dropdowns are properly aligned */
+select {
+    width: 100%; /* Makes sure dropdowns take full width */
+    max-width: 250px; /* Limits the dropdown width */
+    padding: 10px;
+    border: 1px solid #b89c7d;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 14px;
+    color: #333;
+    appearance: none; /* Removes default dropdown styling */
+    text-align: left;
+    display: block;
+  }
+  
+  /* Fix misalignment inside form containers */
+  .sort-selection,
+  .filter-category {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .sort-selection select,
+  .filter-category select {
+    text-align: center; /* Ensures text inside dropdown is centered */
+  }
+  
+  /* Fix dropdown spacing */
+  .sort-selection select,
+  .filter-category select {
+    margin-top: 5px; /* Ensures spacing is consistent */
+  }
+  

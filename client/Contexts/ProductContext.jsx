@@ -27,25 +27,35 @@ const ProductContextProvider = ({ children }) => {
   // Function to get a single product by ID
   const getSingleProduct = (id) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
+    console.log("🔍 Fetching single product with ID:", id);
 
     try {
-      const singleProduct = productsData.find((product) => product.id === id);
-      if (singleProduct) {
-        dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
-      } else {
-        dispatch({ type: "SET_SINGLE_ERROR" });
-      }
+        const singleProduct = productsData.find(
+            (product) => product.id === Number(id) // ✅ Ensure ID is correctly matched
+        );
+        // console.log("Product data",product);
+        
+
+        if (singleProduct) {
+            console.log("✅ Product Found:", singleProduct);
+            dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
+        } else {
+            console.error("❌ Product not found for ID:", id);
+            dispatch({ type: "SET_SINGLE_ERROR" });
+        }
     } catch (error) {
-      dispatch({ type: "SET_SINGLE_ERROR" });
+        console.error("🚨 Error fetching product:", error);
+        dispatch({ type: "SET_SINGLE_ERROR" });
     }
-  };
+};
 
   // Fetch single product when ID changes
-  useEffect(() => {
-    if (state.singleProduct.id) {
-      getSingleProduct(state.singleProduct.id);
-    }
-  }, [state.singleProduct.id]);
+  // useEffect(() => {
+  //   if (state.singleProduct.id) {
+  //     getSingleProduct(state.singleProduct);
+  //   }
+  // }, [state.singleProduct.id]);
+  
 
   return (
     <ProductContext.Provider value={{ ...state, getSingleProduct }}>

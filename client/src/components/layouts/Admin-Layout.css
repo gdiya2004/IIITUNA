@@ -1,0 +1,29 @@
+.container{
+  background-color:none;
+}
+  
+ul{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1.6rem;
+    
+}
+.link{
+    text-decoration:none;
+}
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .admin-content {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-content {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  

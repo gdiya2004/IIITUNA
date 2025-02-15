@@ -9,13 +9,13 @@ export const AuthProvider = ({ children }) => {
   // Separate state for users and providers
   const [user, setUser] = useState(null);
   const [provider, setProvider] = useState(null);
-
   const [services, setServices] = useState("");
+  const [isLoading, setLoading] = useState(true);
 
   /** 🔹 Store Token & Role in LocalStorage */
   const storeTokenInLS = (serverToken, userType) => {
     setToken(serverToken);
-    setRole(userType); // Set role
+    setRole(userType);
     localStorage.setItem("token", serverToken);
     localStorage.setItem("role", userType);
   };
@@ -32,12 +32,13 @@ export const AuthProvider = ({ children }) => {
 
   /** 🔹 Check if User/Provider is Logged In */
   let isLoggedin = !!token;
+  const authorizationToken = `Bearer ${token}`;
 
   /** 🔹 Fetch User Data Based on Role */
   const authenticateUserOrProvider = async () => {
     try {
       if (!token) return;
-
+      setLoading(true);
       const url =
         role === "provider"
           ? "http://localhost:5004/api/auth/provider"
@@ -46,22 +47,21 @@ export const AuthProvider = ({ children }) => {
       const response = await fetch(url, {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: authorizationToken,
         },
       });
 
       if (response.ok) {
         const data = await response.json();
         console.log("Authenticated Data:", data.userData);
-
-        if (role === "provider") {
-          setProvider(data.userData);
-        } else {
-          setUser(data.userData);
-        }
+        role === "provider"
+          ? setProvider(data.userData)
+          : setUser(data.userData);
       }
     } catch (error) {
       console.log("Error fetching authentication data", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -98,6 +98,8 @@ export const AuthProvider = ({ children }) => {
         provider,
         services,
         role,
+        authorizationToken,
+        isLoading,
       }}
     >
       {children}

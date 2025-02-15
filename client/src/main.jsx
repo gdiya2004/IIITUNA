@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css"
 import { ProductContextProvider } from '../Contexts/ProductContext.jsx'
 import { FilterContextProvider } from '../Contexts/filterContext.jsx'
 const {VITE_CLERK_PUBLISHABLE_KEY}=import.meta.env;
+import { CartProvider } from '../Contexts/cardcontext.jsx'
 const publishableKey=VITE_CLERK_PUBLISHABLE_KEY
 createRoot(document.getElementById('root')).render(
  <AuthProvider>
@@ -18,7 +19,9 @@ createRoot(document.getElementById('root')).render(
      */}
           <ProductContextProvider>
           <FilterContextProvider>
+            <CartProvider>
         <App />
+        </CartProvider>
         </FilterContextProvider>
     </ProductContextProvider>
    

@@ -1,13 +1,3 @@
-// import { NavLink } from "react-router-dom";
-// import { useAuth } from "../store/auth";
-// export const About = () => {
-//   const {user}=useAuth();
-//   return (
-//     <>
-//      <img src="./images/event.jpg"/>
-//     </>
-//   );
-// };
 import React from 'react';
 
 export const About = () => {
@@ -34,7 +24,7 @@ export const About = () => {
                 <strong>EverVice</strong> is your go-to solution for all your event needs.
             </p>
 
-            <h2>📍 Find. Connect. Celebrate. 🎉</h2>
+            <h2 style={{"backgroundColor":"white"}}>📍 Find. Connect. Celebrate. 🎉</h2>
         </div>
     );
 };

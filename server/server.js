@@ -12,6 +12,7 @@ import {service_router} from "./router/service-router.js"
 import { provider_router } from "./router/provider_router.js";
 
 
+import { admin_router } from "./router/admin-router.js";
 import { connectDb } from "./utils/db.js";
 import { errorMiddleWare } from "./middlewares/error-middleware.js";
 const app=express();
@@ -28,9 +29,11 @@ app.use(express.json());
 app.use("/api", inquiryRoutes);
 app.use("/api/auth",router_);
 app.use("/api/form",contactRoute);
+app.use("/api/admin",admin_router);
 app.use("/api/data",service_router);
 app.use("/api/provider",provider_router);
 // app.use("/api/admin",admin_router);
+
 app.use(errorMiddleWare);
 
 connectDb().then(()=>{

@@ -1,6 +1,6 @@
 import { useProductContext } from "../../Contexts/ProductContext";
 import Product from "./Product";
-import "../index.css"; // Importing CSS file
+// import "./FeatureProduct.css"; // Importing CSS file
 
 const FeatureProduct = () => {
   const { isLoading, featureProducts } = useProductContext();
@@ -12,7 +12,7 @@ const FeatureProduct = () => {
   return (
     <section className="feature-section">
       <div className="container">
-        <div className="intro-data">Check Now!</div>
+        <div className="intro-data"></div>
         <h2 className="common-heading">Our Feature Services</h2>
         <div className="grid grid-three-column">
           {featureProducts.map((curElem) => (

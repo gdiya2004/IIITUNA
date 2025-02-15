@@ -101,6 +101,7 @@ img {
 /* Modal Content */
 .container.grid2 {
     background: #F8F5F2;
+  
     padding: 30px;
     border-radius: 10px;
     width: 450px;
@@ -258,7 +259,8 @@ body {
 
 .container {
   max-width: 80rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  /* margin-top:100vh; */
   padding: 2rem;
   background: #fff;
   border-radius: 1rem;

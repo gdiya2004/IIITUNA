@@ -13,7 +13,7 @@ export const AdminLayout=()=>{
     return (
         <>
         <header>
-            <div className="container">
+            <div className="container2">
                
                     <ul>
                         <li><NavLink to="/admin/users" className="link">users</NavLink></li>

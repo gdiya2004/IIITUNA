@@ -16,7 +16,7 @@ const FilterSection = ({ onFilterChange }) => {
   return (
    <>
     <div className="filter-sidebar">
-      <div >
+      <div>
         <form action="#">
           <label htmlFor="sort"><h3>Budget:</h3></label>
           <select

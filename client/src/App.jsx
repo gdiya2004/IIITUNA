@@ -9,7 +9,7 @@ import {NavBar} from "../src/components/NavBar"
 import {Error} from "../src/pages/Error"
 import {Footer} from "../src/components/Footer"
 import { Logout } from "./pages/Logout"
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { Cart } from "./components/cart"
 import { AdminLayout } from "./components/layouts/Admin-Layout"
 import {AdminContacts} from "../src/components/AdminContacts"
@@ -18,12 +18,12 @@ import {AdminUsers} from "../src/components/AdminUsers"
 // import { Carousel } from "./components/Carousel"
 import SingleProduct from "./pages/singleProduct"
 export const App=()=>{
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = "//code.tidio.co/YOUR_UNIQUE_TIDIO_CODE.js";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  // }, []);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//code.tidio.co/YOUR_UNIQUE_TIDIO_CODE.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
   return(
     <>
     <BrowserRouter>

@@ -1,46 +1,56 @@
+/* Ensure full height for the page */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The main wrapper that holds the entire page content */
+#root, .app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 110vh; /* Ensure the page takes up at least full viewport height */
+}
+
+/* The main content should take up all available space, pushing the footer down */
+.main-content {
+  flex: 1;
+}
+
+/* Footer styles */
 .footer {
-    background-color: #f8f5f2;
-    color: #2c2c2c;
-    text-align: center;
-    padding: 40px 0;
-    font-family: "Arial", sans-serif;
-  }
-  
-  .footer-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .footer-logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .footer-text {
-    font-size: 14px;
-    opacity: 0.7;
-    margin: 10px 0;
-  }
-  
-  .footer-social {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 20px;
-  }
-  
+  background-color: #f8f5f2;
+  color: #2c2c2c;
+  text-align: center;
+  padding: 40px 0;
+  font-family: "Arial", sans-serif;
+  width: 100%;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Footer container */
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
+/* Responsive footer adjustment */
+@media (max-width: 768px) {
   .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-top: 20px;
-    opacity: 0.7;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-bottom {
       flex-direction: column;
       gap: 5px;
-    }
+      text-align: center;
   }
-  
+}

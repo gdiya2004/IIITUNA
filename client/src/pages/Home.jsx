@@ -2,7 +2,7 @@ import { Carousel } from "../components/Carousel";
 import FeatureProduct from "../components/FeatureProduct";
 import {slides} from "../data/carouselData.json";
 
-import "./home.css"
+// import "./home.css"
 export const Home = () => {
   return (
     <>

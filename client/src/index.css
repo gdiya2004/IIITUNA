@@ -2,229 +2,239 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    margin-top:0;
-    /* background-color: black;  */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  margin-top: 0;
+  /* background-color: black;  */
 }
-/*error page*/
-#error-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #error-page .content {
-    max-width: 70rem;
-    text-align: center;
-  }
-  .content h2.header {
-    font-size: 18vw;
-    line-height: 1em;
-    animation: animate 10s ease-in-out infinite;
-    background: -webkit-repeating-linear-gradient(
-      -60deg,
+
+/error page/ #error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#error-page .content {
+  max-width: 70rem;
+  text-align: center;
+}
+
+.content h2.header {
+  font-size: 18vw;
+  line-height: 1em;
+  animation: animate 10s ease-in-out infinite;
+  background: -webkit-repeating-linear-gradient(-60deg,
       #71b7e6,
       var(--btn-color),
       #b98acc,
       #ee8176,
       #b98acc,
       var(--btn-color),
-      #9b59b6
-    );
-    background-size: 500%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
-    position: relative;
-    -webkit-animation: animate 10s ease-in-out infinite;
+      #9b59b6);
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+  position: relative;
+  -webkit-animation: animate 10s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
   }
-  
-  @keyframes animate {
-    0% {
-      background-position: 0 0;
-    }
-    25% {
-      background-position: 100% 0;
-    }
-    50% {
-      background-position: 100% 100%;
-    }
-    75% {
-      background-position: 0% 100%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
+
+  25% {
+    background-position: 100% 0;
   }
-  .content h4 {
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-size: 2rem;
+
+  50% {
+    background-position: 100% 100%;
   }
-  
-  .content .btns {
-    margin: 25px 0;
-    display: inline-flex;
-    justify-content: center;
+
+  75% {
+    background-position: 0% 100%;
   }
-  .content .btns a {
-    display: inline-block;
-    margin: 0 10px;
-    text-decoration: none;
-    border: 2px solid var(--btn-color);
-    color: var(--btn-color);
-    font-weight: 500;
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+
+  100% {
+    background-position: 0% 0%;
   }
-  .content .btns a:hover {
-    background: var(--btn-color);
-    color: #fff;
-  }
+}
+
+.content h4 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.content .btns {
+  margin: 25px 0;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.content .btns a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid var(--btn-color);
+  color: var(--btn-color);
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.content .btns a:hover {
+  background: var(--btn-color);
+  color: #fff;
+}
+
 /* Modal Overlay */
 .section-registration2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 /* Modal Content */
 .container.grid2 {
-    background: #F8F5F2;
-    padding: 30px;
-    border-radius: 10px;
-    width: 450px;
-    position: relative;
-    z-index: 1100;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    border: 2px solid #B7A992;
-    /* Subtle elegant border */
+  background: #F8F5F2;
+
+  padding: 30px;
+  border-radius: 10px;
+  width: 450px;
+  position: relative;
+  z-index: 1100;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid #B7A992;
+  /* Subtle elegant border */
 }
 
 /* Close Button */
 .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    border: none;
-    background: transparent;
-    font-size: 20px;
-    cursor: pointer;
-    color: #495057;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #495057;
 }
 
 /* Form Styling */
 .registration-form {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .registration-form h1 {
-    font-size: 28px;
-    font-weight: 700;
-    /* Bold for Gen-Z effect */
-    text-align: center;
-    color: #343a40;
-    font-family: "Montserrat", sans-serif;
-    /* Gen-Z style font */
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 700;
+  /* Bold for Gen-Z effect */
+  text-align: center;
+  color: #343a40;
+  font-family: "Montserrat", sans-serif;
+  /* Gen-Z style font */
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Form Inputs with Underline Instead of Boxes */
 .registration-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .registration-form form input,
 .registration-form form textarea {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid #B7A992;
-    /* Underline style */
-    background: transparent;
-    padding: 12px;
-    font-size: 18px;
-    font-family: "Montserrat", sans-serif;
-    /* Gen-Z modern font */
-    color: #333;
-    font-weight: 600;
-    /* Semi-bold */
-    transition: border-color 0.3s ease-in-out;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #B7A992;
+  /* Underline style */
+  background: transparent;
+  padding: 12px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  /* Gen-Z modern font */
+  color: #333;
+  font-weight: 600;
+  /* Semi-bold */
+  transition: border-color 0.3s ease-in-out;
 }
 
 .registration-form form input:focus,
 .registration-form form textarea:focus {
-    outline: none;
-    border-bottom: 2px solid #8B5E3C;
-    /* Rich brown focus effect */
+  outline: none;
+  border-bottom: 2px solid #8B5E3C;
+  /* Rich brown focus effect */
 }
 
 /* Styling for the Message Textarea */
 .registration-form form textarea {
-    resize: none;
-    height: 100px;
-    /* Ensures message box fits well */
-    font-size: 16px;
+  resize: none;
+  height: 100px;
+  /* Ensures message box fits well */
+  font-size: 16px;
 }
 
 /* Submit Button */
 .registration-form form button {
-    background-color: #8B5E3C;
-    /* Maroon brown */
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 18px;
-    font-family: "Montserrat", sans-serif;
-    /* Keeping it bold & Gen-Z */
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
+  background-color: #8B5E3C;
+  /* Maroon brown */
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  /* Keeping it bold & Gen-Z */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
 }
 
 .registration-form form button:hover {
-    background-color: #5D3A1A;
-    /* Darker brown for hover effect */
+  background-color: #5D3A1A;
+  /* Darker brown for hover effect */
 }
+
 .about-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .about-container h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .about-container p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .about-container h2 {
-    font-size: 1.8rem;
-    color: #ff9900;
-    margin-top: 20px;
+  font-size: 1.8rem;
+  color: #ff9900;
+  margin-top: 20px;
 }
 
 /* feature products */
@@ -258,7 +268,8 @@ body {
 
 .container {
   max-width: 80rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  /* margin-top:100vh; */
   padding: 2rem;
   background: #fff;
   border-radius: 1rem;
@@ -361,75 +372,5 @@ body {
 
   .container {
     max-width: 90%;
-  }
-}
-
-/* product.js */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 350px;
-  /* Slightly larger card */
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease-in-out;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card img {
-  width: 100%;
-  height: 400px;
-  /* Increased height for a taller image */
-  object-fit: cover;
-  /* Ensures image fills the space properly */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.card-data {
-  padding: 1rem;
-  text-align: center;
-}
-
-.card-data h3 {
-  font-size: 1.3rem;
-  /* Slightly larger text */
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.card-data-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.card-data--price {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #ff5733;
-}
-
-/* 📱 Responsive Design */
-@media (max-width: 768px) {
-  .card {
-    max-width: 100%;
-  }
-
-  .card img {
-    height: 350px;
-    /* Adjusted for smaller screens */
-  }
-
-  .card-data h3 {
-    font-size: 1.2rem;
   }
 }

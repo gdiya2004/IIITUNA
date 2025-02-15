@@ -25,9 +25,9 @@ export const NavBar = () => {
           <li>
             <NavLink to="/service">Service</NavLink>
           </li>
-          <li>
-            <NavLink to="/provider">Provider</NavLink>
-          </li>
+          {/* <li>
+            <NavLink to="/provider/register">Provider</NavLink>
+          </li> */}
           <li>
             <NavLink onClick={() => setModalContact(true)}>Contact</NavLink>
             <Contact

@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #f4f4f4;
+    background: rgb(53, 40, 40);
     padding-top: 60px; /* Height of the navbar to prevent content overlap */
 }
 
@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.9); /* Translucent white background */
+    background: rgba(161, 130, 120, 0.9); /* Translucent white background */
     color: #333;
     padding: 15px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */

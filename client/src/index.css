@@ -363,3 +363,73 @@ body {
     max-width: 90%;
   }
 }
+
+/* product.js */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  /* Slightly larger card */
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  /* Increased height for a taller image */
+  object-fit: cover;
+  /* Ensures image fills the space properly */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-data {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-data h3 {
+  font-size: 1.3rem;
+  /* Slightly larger text */
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.card-data-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.card-data--price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff5733;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .card img {
+    height: 350px;
+    /* Adjusted for smaller screens */
+  }
+
+  .card-data h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,16 +1,19 @@
 {
     "slides":[
         {
-            "src":"./images/event1.jpg"
+            "src":"https://i.pinimg.com/736x/50/2c/48/502c4891624cd4cdf0e13ac07102f4f4.jpg"
         },
         {
-            "src":"./images/event2.jpg"
+            "src":"https://i.pinimg.com/736x/08/54/c7/0854c7d40e6e20f6cd56353ffe74c263.jpg"
         },
         {
-            "src":"./images/event3.jpg"
+            "src":"https://i.pinimg.com/736x/ef/df/88/efdf882eb8f5b2dffb53f90d0f548810.jpg"
         },
         {
-            "src":"./images/event5.png"
+            "src":"./images/cor1.jpg"
+        },
+        {
+            "src":"https://i.pinimg.com/736x/2a/75/af/2a75afd0943d698842abd49d6a300dbc.jpg"
         }
     ]
 }

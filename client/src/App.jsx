@@ -10,11 +10,10 @@ import {Error} from "../src/pages/Error"
 import {Footer} from "../src/components/Footer"
 import { Logout } from "./pages/Logout"
 import { useEffect } from "react";
-
-
 import {slides} from "./data/carouselData.json"
 import { Carousel } from "./components/Carousel"
 import SingleProduct from "./pages/singleProduct"
+import { ProPRegister } from "./pages/ProRegistrater"
 export const App=()=>{
   useEffect(() => {
     const script = document.createElement("script");
@@ -36,6 +35,7 @@ export const App=()=>{
     <Route path="*" element={<Error/>}/>
     <Route path="/logout" element={<Logout/>}/>
     <Route path="/singleProduct/:id" element={<SingleProduct/>}/>
+    <Route path="/provider" element={<ProPRegister/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

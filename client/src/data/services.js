@@ -25,7 +25,7 @@ export const productsData = [
     "price": "$3,000 - $20,000",
     "provider": "Dream Weddings & Co.",
     "location": "Jaipur, India",
-    "image": "https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.pinimg.com/736x/01/6a/a3/016aa31fa5d774739dfa68a777fe7871.jpg",
     "featured":true
   },
   {
@@ -35,7 +35,7 @@ export const productsData = [
     "price": "$1,200 - $8,000",
     "provider": "Melody Events Entertainment",
     "location": "Bangalore, India",
-    "image": "https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.pinimg.com/736x/0b/d3/93/0bd3931e195c3dcf06c89380cfc3b103.jpg",
     "featured":true
   },
   {

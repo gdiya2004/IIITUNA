@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from "react";
 import "./Gallery.css"; // Ensure you have the CSS file
 
 const images = [
-  "event1.jpg",
+  "carousel2.jpg",
   "music.jpg",
   "event3.jpg",
-  "event5.jpg",
-  "event2.jpg",
-  "memories.jpg"
+  "carusel2.jpg",
+  "cor2.jpg",
+  "memories.jpg",
+  "coursel2.jpg",
 ];
 
 const Gallery = () => {

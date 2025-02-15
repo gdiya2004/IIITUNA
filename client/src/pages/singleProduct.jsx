@@ -21,6 +21,9 @@ const SingleProduct = () => {
   console.log("sing",id)
   const {addToCart}=useCartContext()
 
+
+
+
   const {
     id: alias,
     price,
@@ -35,7 +38,8 @@ const SingleProduct = () => {
     console.log("aaaaaa",id);
     
     getSingleProduct(id);
-  }, []);
+    console.log("ajjjjjjaaaa",id);
+  }, [id]);
   
   
 

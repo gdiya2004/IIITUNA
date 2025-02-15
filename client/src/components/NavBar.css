@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,8 @@
 
 body {
     background: #f4f4f4;
-    padding-top: 60px; /* Height of the navbar to prevent content overlap */
+    padding-top: 60px;
+    /* Height of the navbar to prevent content overlap */
 }
 
 .navbar {
@@ -19,10 +19,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.9); /* Translucent white background */
+    background: rgba(255, 255, 255, 0.9);
+    /* Translucent white background */
     color: #333;
     padding: 15px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
     z-index: 1000;
     transition: background 0.3s ease-in-out;
 }
@@ -90,5 +92,5 @@ body {
     .hamburger {
         display: flex;
     }
-    
+
 }

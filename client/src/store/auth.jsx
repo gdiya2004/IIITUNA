@@ -1,78 +1,116 @@
-import {createContext} from "react"
-import {useEffect} from "react"
-import { useState,useContext } from "react";
-export const AuthContext=createContext();
+import { createContext, useContext, useEffect, useState } from "react";
 
-export const AuthProvider=({children})=>{
-    const [token,setToken]=useState(localStorage.getItem("token"));
-    const [user,setUser]=useState();
-    const [isLoading,setloading]=useState(true);
-    const [services,setServices]=useState([]);
+export const AuthContext = createContext();
 
-    const storeTokenInLS=(serverToken)=>{
-        setToken(serverToken);
-        return localStorage.setItem("token",serverToken)
-    }
-    
-    const LogoutUser=()=>{
-        setToken("");
-        return localStorage.removeItem("token")
-    }
-    const authorizationToken=`Bearer ${token}`
-    let isLoggedin=!!token;
+export const AuthProvider = ({ children }) => {
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
+  const [role, setRole] = useState(localStorage.getItem("role") || ""); // "user" or "provider"
 
-    const userAuthentication=async()=>{
-        try{
-            setloading(true);
-            const response=await fetch("http://localhost:5004/api/auth/user",{
-                    method:"GET",
-                    headers:{
-                        Authorization:authorizationToken
-                    }
-            })
-            if(response.ok){
-                const data=await response.json();
-                console.log("user data",data.userData);
-                setUser(data.userData);
-                setloading(false);
-            }else{
-                console.log("Error fetching data");
-                setloading(false);
-            }
-        }catch(error){
-            console.log("Error fetching data")
-        }
-    }
-    const getServices=async()=>{
-        try{
-            const response=await fetch("http://localhost:5004/api/data/service",{
-                method:"GET",
-            })
-            if(response.ok){
-                const data=await response.json();
-                console.log(data.msg);
-                setServices(data.msg);
-            }
-        }catch(err){
-            console.log("service err");
-        }
-    }
-    useEffect(()=>{
-        getServices();
-        userAuthentication();
-    },[])
+  // Separate state for users and providers
+  const [user, setUser] = useState(null);
+  const [provider, setProvider] = useState(null);
+  const [services, setServices] = useState("");
+  const [isLoading, setLoading] = useState(true);
 
-     return(
-        <AuthContext.Provider value={{isLoggedin,storeTokenInLS,LogoutUser,user,services,authorizationToken,isLoading}}>
-            {children}
-        </AuthContext.Provider>
-    )
-}
+  /** 🔹 Store Token & Role in LocalStorage */
+  const storeTokenInLS = (serverToken, userType) => {
+    setToken(serverToken);
+    setRole(userType);
+    localStorage.setItem("token", serverToken);
+    localStorage.setItem("role", userType);
+  };
 
-export const useAuth=()=>{  
-    const authContextValue=useContext(AuthContext);
-    if(!authContextValue){
-        throw new Error("useAuth must be used within an AuthProvider")
+  /** 🔹 Logout & Clear Storage */
+  const LogoutUser = () => {
+    setToken("");
+    setRole("");
+    setUser(null);
+    setProvider(null);
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+  };
+
+  /** 🔹 Check if User/Provider is Logged In */
+  let isLoggedin = !!token;
+  const authorizationToken = `Bearer ${token}`;
+
+  /** 🔹 Fetch User Data Based on Role */
+  const authenticateUserOrProvider = async () => {
+    try {
+      if (!token) return;
+      setLoading(true);
+      const url =
+        role === "provider"
+          ? "http://localhost:5004/api/auth/provider"
+          : "http://localhost:5004/api/auth/user";
+
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          Authorization: authorizationToken,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Authenticated Data:", data.userData);
+        role === "provider"
+          ? setProvider(data.userData)
+          : setUser(data.userData);
+      }
+    } catch (error) {
+      console.log("Error fetching authentication data", error);
+    } finally {
+      setLoading(false);
     }
-    return authContextValue;
-}
+  };
+
+  /** 🔹 Fetch Services */
+  const getServices = async () => {
+    try {
+      const response = await fetch("http://localhost:5004/api/data/service", {
+        method: "GET",
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Services:", data.msg);
+        setServices(data.msg);
+      }
+    } catch (err) {
+      console.log("Service fetch error", err);
+    }
+  };
+
+  /** 🔹 Run Authentication & Fetch Services on Role/Token Change */
+  useEffect(() => {
+    getServices();
+    authenticateUserOrProvider();
+  }, [role, token]); // Runs when role or token changes
+
+  return (
+    <AuthContext.Provider
+      value={{
+        isLoggedin,
+        storeTokenInLS,
+        LogoutUser,
+        user,
+        provider,
+        services,
+        role,
+        authorizationToken,
+        isLoading,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const authContextValue = useContext(AuthContext);
+  if (!authContextValue) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return authContextValue;
+};

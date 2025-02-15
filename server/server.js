@@ -1,5 +1,6 @@
-import dotenv  from "dotenv"
+import dotenv from 'dotenv';
 dotenv.config();
+
 // console.log(process.env.MONGODB_URI)
 import cors from "cors";
 import inquiryRoutes from "./router/inquiryRoutes.js";
@@ -7,6 +8,10 @@ import express from "express"
 import {router_} from "./router/auth-router.js"
 import {contactRoute} from "./router/contact-router.js"
 import {service_router} from "./router/service-router.js"
+// import { admin_router } from "./router/admin-router.js";
+import { provider_router } from "./router/provider_router.js";
+
+
 import { admin_router } from "./router/admin-router.js";
 import { connectDb } from "./utils/db.js";
 import { errorMiddleWare } from "./middlewares/error-middleware.js";
@@ -26,6 +31,8 @@ app.use("/api/auth",router_);
 app.use("/api/form",contactRoute);
 app.use("/api/admin",admin_router);
 app.use("/api/data",service_router);
+app.use("/api/provider",provider_router);
+// app.use("/api/admin",admin_router);
 
 app.use(errorMiddleWare);
 

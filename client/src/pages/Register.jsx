@@ -40,7 +40,7 @@ export const Register=({isOpen,onClose})=>{
                 // const res_data=await response.json();
                 // console.log("rs from server",res_data);
 
-                storeTokenInLS(res_data.token);
+                storeTokenInLS(res_data.token,"user");
                 // localStorage.setItem("token",res_data.token);
 
                 setUser( {username:"",

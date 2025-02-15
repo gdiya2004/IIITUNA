@@ -5,46 +5,40 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 600px;
-    /* Restrict max width to prevent excess space */
-    padding: 1.5rem;
+    max-width: 500px; /* Reduce max width */
+    padding: 1rem; /* Decrease padding */
     background: linear-gradient(135deg, #f7e8d3, #f2d7d9, #c9e4de);
     border-radius: 1rem;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12);
     transition: 0.3s;
     flex-direction: column;
-    /* Ensures a proper stacking layout */
 }
 
 .main-screen {
     display: flex;
     flex-direction: column;
-    /* Stack image and text properly */
     align-items: center;
     width: 100%;
-    max-width: 450px;
-    padding: 1rem;
+    max-width: 400px; /* Reduce max width */
+    padding: 0.8rem; /* Decrease padding */
     border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .main-screen img {
     width: 100%;
     height: auto;
-    max-height: 350px;
-    /* Reduce height to remove excess space */
-    border-radius: 1rem;
+    max-height: 280px; /* Reduce image height */
+    border-radius: 0.8rem;
     object-fit: contain;
-    /* Ensure it adjusts properly */
     transition: 0.3s;
 }
 
 .image-text {
-    margin-top: 0.8rem;
-    /* Reduce space between image and text */
-    font-size: 1.1rem;
+    margin-top: 0.5rem; /* Reduce gap */
+    font-size: 1rem; /* Decrease font size */
     font-family: "Chillax", sans-serif;
     font-weight: 600;
     color: #55423d;
@@ -54,21 +48,20 @@
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
     .wrapper {
-        width: 100%;
-        padding: 1rem;
-    }
-
-    .main-screen {
-        width: 95%;
+        max-width: 90%;
         padding: 0.8rem;
     }
 
+    .main-screen {
+        max-width: 90%;
+        padding: 0.6rem;
+    }
+
     .main-screen img {
-        max-height: 250px;
-        /* Further reduce image height for mobile */
+        max-height: 220px; /* Further reduce image height for mobile */
     }
 
     .image-text {
-        font-size: 1rem;
+        font-size: 0.9rem; /* Adjust text size */
     }
 }

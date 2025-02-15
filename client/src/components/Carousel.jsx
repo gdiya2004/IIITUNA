@@ -17,7 +17,7 @@ export const Carousel = ({ data }) => {
 
   // Auto-slide every 3 seconds
   useEffect(() => {
-    const interval = setInterval(nextSlide, 1000);
+    const interval = setInterval(nextSlide, 1500);
     return () => clearInterval(interval);
   }, []);
 

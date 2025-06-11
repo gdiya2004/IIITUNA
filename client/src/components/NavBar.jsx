@@ -14,7 +14,7 @@ export const NavBar = () => {
   const {isLoggedin}=useAuth();
     return (
       <nav className="navbar">
-        <div className="logo">MyLogo</div>
+        <div className="logo">EverVice</div>
         <ul className={`nav-links ${isOpen ? "active" : ""}`}>
           <li>
             <NavLink to="/">Home</NavLink>

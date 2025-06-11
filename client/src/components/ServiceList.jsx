@@ -1,21 +1,19 @@
-import "../Styles/servicecard.css";
 import React from "react";
 import { useFilterContext } from "../../Contexts/filterContext";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import "../Styles/servicecard.css";
 
 const ServiceList = () => {
-  const { filter_data } = useFilterContext(); 
-  const navigate = useNavigate(); 
+  const { filter_data } = useFilterContext();
+  const navigate = useNavigate();
 
   const handleServiceClick = (product) => {
-      navigate(`/singleProduct/${product.id}`)
+    navigate(`/singleProduct/${product.id}`);
   };
 
   return (
     <div className="service-main">
       <h2>Filtered Services</h2>
-
-      {/* Grid for Service Cards */}
       <div className="service-grid">
         {filter_data.length > 0 ? (
           filter_data.map((product, index) => (

@@ -3,7 +3,7 @@ import "./Gallery.css"; // Ensure you have the CSS file
 
 const images = [
   "carousel2.jpg",
-  "music.jpg",
+  // "music.jpg",
   "event3.jpg",
   "carusel2.jpg",
   "cor2.jpg",

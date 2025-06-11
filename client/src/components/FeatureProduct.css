@@ -1,0 +1,28 @@
+.feature-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.common-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.grid.grid-three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  /* Key styling to show only one row */
+  max-height: 650px; /* Adjust based on your card height */
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .grid.grid-three-column {
+    grid-template-columns: 1fr; /* Mobile: stack vertically */
+    max-height: none;
+  }
+}

@@ -1,6 +1,6 @@
 import { useProductContext } from "../../Contexts/ProductContext";
 import Product from "./Product";
-// import "./FeatureProduct.css"; // Importing CSS file
+import "./FeatureProduct.css"; // Importing CSS file
 
 const FeatureProduct = () => {
   const { isLoading, featureProducts } = useProductContext();

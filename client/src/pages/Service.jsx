@@ -1,6 +1,6 @@
 
 ///////////// Main Page /////////////////////////
-// import "../Styles/servicecard.css"
+import "../Styles/servicecard.css"
 import React, { useState } from "react";
 import FilterSection from "../components/FilterSection";
 import ServiceList from "../components/ServiceList";
